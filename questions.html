@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover programming questions, discussions, and accepted answers via the Stack Exchange API on Stack Overflow.">
+  <title>Programming Questions — DevTrail</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Shared Navigation Header -->
+  <header id="site-header" class="site-header"></header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <div class="app-container">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <div class="page-header-top">
+          <div class="page-header-icon" aria-hidden="true" style="background-color: #FEF3C7; color: #D97706;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M18.986 21.865v-6.408h2.134V24H1.845v-8.543h2.133v6.408h15.008zM6.111 19.731H16.85v-2.134H6.111v2.134zm.278-4.542l10.457 2.193.44-2.088-10.457-2.193-.44 2.088zm1.31-4.484l9.535 4.887.973-1.898-9.535-4.887-.973 1.898zm2.846-4.148l7.842 7.278 1.439-1.55-7.842-7.278-1.439 1.55zm4.846-3.839l-1.802 1.107 5.766 9.387 1.802-1.107-5.766-9.387z"/>
+            </svg>
+          </div>
+          <h1 class="page-title">Programming Questions</h1>
+        </div>
+        <p class="page-subtitle">
+          Search questions and accepted answers on Stack Overflow. Filter by topic tags, evaluate answer quality, and discover solutions to technical challenges.
+        </p>
+      </header>
+
+      <!-- Search & Filter Card -->
+      <section class="search-filter-card" aria-label="Question Search Filters">
+        <form id="question-search-form" class="search-form" role="search">
+          <div class="search-input-row">
+            <div class="search-field-wrap">
+              <label for="question-query-input" class="sr-only">Search questions</label>
+              <span class="search-field-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input
+                type="search"
+                id="question-query-input"
+                class="form-input"
+                placeholder="Search questions (e.g. promise all error handling, event delegation, flexbox center)..."
+                aria-label="Question search keyword"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary btn-search">
+              Search Questions
+            </button>
+          </div>
+
+          <div class="filter-row">
+            <div class="filter-group">
+              <label for="question-tag-select" class="filter-label">Tag Filter:</label>
+              <select id="question-tag-select" class="form-select">
+                <option value="">All Tags</option>
+                <option value="javascript">javascript</option>
+                <option value="typescript">typescript</option>
+                <option value="python">python</option>
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="reactjs">reactjs</option>
+                <option value="node.js">node.js</option>
+                <option value="dom">dom</option>
+                <option value="api">api</option>
+                <option value="async-await">async-await</option>
+                <option value="git">git</option>
+                <option value="sql">sql</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="question-sort-select" class="filter-label">Sort By:</label>
+              <select id="question-sort-select" class="form-select">
+                <option value="relevance">Highest Relevance</option>
+                <option value="votes">Highest Votes</option>
+                <option value="activity">Recent Activity</option>
+                <option value="creation">Newest First</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Feedback & Status Bar -->
+      <div class="search-feedback-bar" aria-live="polite">
+        <span id="question-results-count" class="results-count">Preparing question search...</span>
+        <span id="question-quota-badge" class="badge badge-navy">Stack Exchange API v2.3</span>
+      </div>
+
+      <!-- Results Grid -->
+      <section id="question-results-grid" class="resource-grid" aria-label="Question Search Results">
+        <!-- Rendered dynamically by question-page.js -->
+      </section>
+
+      <!-- Pagination Controls -->
+      <nav id="question-pagination" class="pagination-controls" aria-label="Question search pagination">
+        <!-- Rendered dynamically by question-page.js -->
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <!-- Page Controller Module -->
+  <script type="module" src="js/modules/question-page.js"></script>
+</body>
+</html>

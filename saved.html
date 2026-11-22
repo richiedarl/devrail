@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your personal collection of bookmarked open-source repositories and programming questions saved locally in DevTrail.">
+  <title>Saved Resources — DevTrail</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Shared Navigation Header -->
+  <header id="site-header" class="site-header"></header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <div class="app-container">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <div class="page-header-top">
+          <div class="page-header-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h1 class="page-title">Saved Resources</h1>
+        </div>
+        <p class="page-subtitle">
+          Your personal library of bookmarked open-source repositories and programming solutions, stored privately in your browser.
+        </p>
+      </header>
+
+      <!-- Saved Library Controls Toolbar -->
+      <section class="saved-controls-bar" aria-label="Saved resources filtering and options">
+        <div id="saved-filter-tabs" class="filter-tabs" role="tablist" aria-label="Filter saved items by type">
+          <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-type="all">
+            All <span class="tab-badge" id="count-badge-all">0</span>
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-type="repository">
+            Repositories <span class="tab-badge" id="count-badge-repos">0</span>
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-type="question">
+            Questions <span class="tab-badge" id="count-badge-questions">0</span>
+          </button>
+        </div>
+
+        <button type="button" id="btn-clear-all" class="btn btn-outline btn-sm" style="display: none;">
+          Clear All
+        </button>
+      </section>
+
+      <!-- Status Bar -->
+      <div class="search-feedback-bar" aria-live="polite">
+        <span id="saved-results-count" class="results-count">Loading saved resources...</span>
+        <span class="badge badge-mint">Local Storage Active</span>
+      </div>
+
+      <!-- Saved Resources Grid -->
+      <section id="saved-results-grid" class="resource-grid" aria-label="Saved resources list">
+        <!-- Rendered dynamically by saved-page.js -->
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <!-- Page Controller Module -->
+  <script type="module" src="js/modules/saved-page.js"></script>
+</body>
+</html>

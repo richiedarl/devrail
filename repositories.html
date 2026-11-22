@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search public open-source repositories on GitHub. Filter by programming language, evaluate stars and forks.">
+  <title>Explore Repositories — DevTrail</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Shared Navigation Header -->
+  <header id="site-header" class="site-header"></header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <div class="app-container">
+
+      <!-- Page Header -->
+      <header class="page-header">
+        <div class="page-header-top">
+          <div class="page-header-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+            </svg>
+          </div>
+          <h1 class="page-title">Explore Repositories</h1>
+        </div>
+        <p class="page-subtitle">
+          Search open-source projects on GitHub. Filter by language, review community stars and forks, and access original code repositories.
+        </p>
+      </header>
+
+      <!-- Search & Filter Card -->
+      <section class="search-filter-card" aria-label="Repository Search Filters">
+        <form id="repo-search-form" class="search-form" role="search">
+          <div class="search-input-row">
+            <div class="search-field-wrap">
+              <label for="repo-query-input" class="sr-only">Search repositories</label>
+              <span class="search-field-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input
+                type="search"
+                id="repo-query-input"
+                class="form-input"
+                placeholder="Search repositories (e.g. express, tailwind, algorithm, nextjs)..."
+                aria-label="Repository search keyword"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary btn-search">
+              Search Repositories
+            </button>
+          </div>
+
+          <div class="filter-row">
+            <div class="filter-group">
+              <label for="repo-language-select" class="filter-label">Language:</label>
+              <select id="repo-language-select" class="form-select">
+                <option value="">All Languages</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="TypeScript">TypeScript</option>
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Rust">Rust</option>
+                <option value="Go">Go</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="PHP">PHP</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Kotlin">Kotlin</option>
+                <option value="Swift">Swift</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="repo-sort-select" class="filter-label">Sort By:</label>
+              <select id="repo-sort-select" class="form-select">
+                <option value="stars">Most Stars</option>
+                <option value="updated">Recently Updated</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Feedback & Status Bar -->
+      <div class="search-feedback-bar" aria-live="polite">
+        <span id="repo-results-count" class="results-count">Preparing repository search...</span>
+        <span id="repo-rate-limit-badge" class="badge badge-navy">GitHub REST API</span>
+      </div>
+
+      <!-- Results Grid -->
+      <section id="repo-results-grid" class="resource-grid" aria-label="Repository Search Results">
+        <!-- Rendered dynamically by repo-page.js -->
+      </section>
+
+      <!-- Pagination Controls -->
+      <nav id="repo-pagination" class="pagination-controls" aria-label="Repository search pagination">
+        <!-- Rendered dynamically by repo-page.js -->
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <!-- Page Controller Module -->
+  <script type="module" src="js/modules/repo-page.js"></script>
+</body>
+</html>
